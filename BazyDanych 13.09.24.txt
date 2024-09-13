@@ -1,0 +1,52 @@
+3.CREATE DATABASE Imie_nazwisko DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+4.CREATE TABLE Uczniowie(
+Id_Ucznia INT AUTO_INCREMENT PRIMARY KEY,
+Nazwisko VARCHAR(40),
+Imie VARCHAR(25),
+Ulica VARCHAR(25)
+);
+
+CREATE TABLE TelefonyUczniow(
+Id_Ucznia INT,
+Telefon INT,
+PRIMARY KEY(Id_Ucznia, Telefon)
+);
+
+5.CREATE USER ‘KD’ IDENTIFIED BY 'haslo';
+
+6.SET PASSWORD FOR ‘KD’ = PASSWORD('tak');
+
+7.RENAME USER ‘KD’ TO K_D;
+
+8.DROP USER K_D;
+
+9.CREATE USER KrzysztofDziurbejko IDENTIFIED BY 'haslo';
+
+10.RENAME USER KrzysztofDziurbejko TO Krzysztof_Dziurbejko;
+
+11.SET PASSWORD FOR Krzysztof_Dziurbejko = PASSWORD('Karate$$$111');
+
+12.SHOW GRANTS FOR Krzysztof_Dziurbejko;
+
+13.GRANT SELECT ON Imie_nazwisko.telefonyuczniow TO Krzysztof_Dziurbejko;
+
+14.SHOW GRANTS FOR Krzysztof_Dziurbejko;
+
+15. GRANT INSERT ON Imie_nazwisko.uczniowie TO Krzysztof_Dziurbejko;
+
+16. SHOW GRANTS FOR Krzysztof_Dziurbejko;
+
+17. GRANT DELETE ON Imie_nazwisko.telefonyuczniow TO Krzysztof_Dziurbejko;
+GRANT UPDATE ON Imie_nazwisko.telefonyuczniow TO Krzysztof_Dziurbejko;
+
+18.SHOW GRANTS FOR Krzysztof_Dziurbejko;
+
+19.GRANT CREATE ON Imie_nazwisko TO Krzysztof_Dziurbejko;
+
+20.SHOW GRANTS FOR Krzysztof_Dziurbejko;
+
+21. SHOW GRANTS FOR Krzysztof_Dziurbejko;
+
+22. REVOKE DELETE ON Imie_nazwisko.telefonyuczniow TO Krzysztof_Dziurbejko;
+
